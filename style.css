@@ -1,4 +1,6 @@
-/* Variáveis de Cores e Tipografia */
+/* =========================================
+   Variáveis de Cores e Tipografia
+   ========================================= */
 :root {
     --bg-color: #FAF8F5; /* Bege clarinho */
     --text-main: #2C241B; /* Marrom escuro */
@@ -32,37 +34,49 @@ h1, h2, h3, .logo {
     font-weight: 600;
 }
 
-/* Utilitários */
+/* =========================================
+   Utilitários e Componentes Gerais
+   ========================================= */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 20px;
 }
+
 .text-center { text-align: center; }
 .bg-light { background-color: var(--light-beige); }
+.bg-white { background-color: #fff; }
 .subtitle { margin-bottom: 40px; font-style: italic; color: var(--accent-brown); }
 
 /* Botões */
 .btn {
     display: inline-block;
-    padding: 12px 24px; /* Diminuiu o tamanho do botão (antes era 15px 30px) */
+    padding: 12px 24px;
     background-color: var(--accent-gold);
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.85rem; /* Deixou a fonte levemente menor para acompanhar o botão */
-    transition: background-color 0.3s ease;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
     border: none;
-    border-radius: 50px; /* É isso aqui que deixa a borda totalmente redonda! */
+    border-radius: 50px;
     cursor: pointer;
-    margin: 5px; /* Adiciona um pequeno espaço para os dois botões não ficarem grudados */
+    margin: 5px;
 }
-.btn:hover { background-color: var(--accent-brown); }
-.btn-full { width: 100%; border-radius: 5px; } /* Mantém o botão do formulário um pouco mais quadrado, se quiser que ele fique redondo também, é só apagar esse border-radius: 5px daqui */
 
+.btn:hover {
+    background-color: var(--accent-brown);
+}
 
-/* Navegação */
+.btn-full {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* =========================================
+   Navegação (Header)
+   ========================================= */
 .navbar {
     position: fixed;
     top: 0;
@@ -76,239 +90,125 @@ h1, h2, h3, .logo {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-.logo { font-size: 2rem; color: var(--accent-gold); }
-.nav-links { list-style: none; display: flex; gap: 30px; }
+
+.logo {
+    font-size: 2rem;
+    color: var(--accent-gold);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-main);
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
-.nav-links a:hover { color: var(--accent-gold); }
-.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
 
-/* Hero Section */
+.nav-links a:hover {
+    color: var(--accent-gold);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* =========================================
+   Hero Section (Início)
+   ========================================= */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--light-beige); /* Fundo bege claro, suave e minimalista */
-    color: var(--text-main); /* Volta o texto para marrom escuro */
+    background-color: var(--light-beige);
+    color: var(--text-main);
     padding: 0 20px;
 }
+
 .hero h2 { 
     font-size: 1.5rem; 
     letter-spacing: 2px; 
     margin-bottom: 10px; 
-    color: var(--accent-brown); /* Subtítulo em um tom terroso suave */
+    color: var(--accent-brown);
 }
+
 .hero h1 { 
     font-size: 4rem; 
     margin-bottom: 20px; 
     line-height: 1.1; 
 }
+
 .hero p { 
     font-size: 1.2rem; 
     margin-bottom: 30px; 
     font-weight: 400; 
 }
 
-/* Sobre */
-.sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.sobre-texto h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent-gold); }
-.sobre-imagem img { width: 100%; border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-
-/* Serviços */
-#servicos h2 { font-size: 2.5rem; margin-bottom: 50px; color: var(--accent-gold); }
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.card {
-    background: #fff;
-    padding: 40px 30px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-.card:hover { transform: translateY(-10px); }
-.card h3 { margin-bottom: 15px; color: var(--accent-brown); font-size: 1.5rem; }
-
-/* Galeria */
-#galeria h2 { font-size: 2.5rem; color: var(--accent-gold); }
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
-.gallery-item { text-align: center; }
-.gallery-item .label { font-weight: 600; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
-.before-after { display: flex; gap: 10px; }
-.before-after img { width: 50%; object-fit: cover; border-radius: 5px; }
-
-/* Contato */
-.form-container { max-width: 600px; }
-#contato h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--accent-gold); }
-.input-group { margin-bottom: 20px; }
-.input-group input, .input-group textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    background-color: transparent;
-    font-family: var(--font-text);
-    font-size: 1rem;
-    color: var(--text-main);
-}
-.input-group input:focus, .input-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-gold);
-}
-
-
-/* Animações (Scroll) */
-.fade-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.fade-section.visible { opacity: 1; transform: translateY(0); }
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-color);
-        padding: 20px 0;
-        text-align: center;
-    }
-    .nav-links.active { display: flex; }
-    .menu-toggle { display: block; }
-    .sobre-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 3rem; }
-    .navbar { padding: 20px; }
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas desktop */
-    gap: 30px;
-}
-@media (max-width: 992px) {
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); } /* 2 colunas tablet */
-}
-@media (max-width: 600px) {
-    .gallery-grid { grid-template-columns: 1fr; } /* 1 coluna mobile */
-}
-
-/* Item da Galeria (Hover Effects) */
-.gallery-thumb {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    aspect-ratio: 1 / 1;
-}
-.gallery-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-.gallery-thumb:hover img {
-    transform: scale(1.1); /* Efeito Scale ao passar o mouse */
-}
-.gallery-thumb .thumb-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(44, 36, 27, 0.9));
-    color: white;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-.gallery-thumb:hover .thumb-overlay { opacity: 1; } /* Efeito Fade ao passar o mouse */
-
-/* Lightbox Modal (Tela Cheia) */
-.lightbox-overlay {
-    display: none; /* Escondido por padrão */
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(15, 15, 15, 0.95);
-    z-index: 9999;
-    align-items: center;
+.hero-actions {
+    display: flex;
     justify-content: center;
-    opacity: 1;
-    transition: opacity 0.3s ease;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
-.lightbox-overlay.active {
+
+.hero-social-container {
     display: flex;
-    opacity: 1;
+    justify-content: center;
+    margin-top: 25px;
 }
 
-.lightbox-content {
-    background: var(--bg-color);
-    border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
-    overflow: hidden;
+.hero-social-link,
+.hero-social-link:visited {
+    color: var(--accent-gold);
     display: flex;
-    flex-direction: column;
-    animation: modalPop 0.4s ease-out; /* Animação suave de entrada */
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-@keyframes modalPop {
-    0% { transform: scale(0.95); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.lightbox-text { padding: 20px; text-align: center; color: var(--text-main); }
-.lightbox-text h3 { color: var(--accent-gold); margin-bottom: 5px; }
-.lightbox-image-container { width: 100%; height: 50vh; background: #000; }
-.lightbox-image-container img { width: 100%; height: 100%; object-fit: contain; }
-
-/* Controles Antes/Depois */
-.lightbox-controls { display: flex; }
-.toggle-btn {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    background: var(--light-beige);
+.hero-social-link:hover {
     color: var(--text-main);
-    font-family: var(--font-text);
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.toggle-btn.active { background: var(--accent-gold); color: white; }
-
-/* Setas e Fechar */
-.close-lightbox {
-    position: absolute; top: 20px; right: 30px;
-    color: white; font-size: 40px; cursor: pointer; transition: color 0.3s;
-}
-.close-lightbox:hover { color: var(--accent-gold); }
-
-.nav-arrow {
-    background: transparent; border: none; color: white;
-    font-size: 50px; cursor: pointer; position: absolute;
-    padding: 20px; transition: color 0.3s;
-}
-.nav-arrow:hover { color: var(--accent-gold); }
-.prev-arrow { left: 20px; }
-.next-arrow { right: 20px; }
-
-@media (max-width: 768px) {
-    .nav-arrow { font-size: 30px; padding: 10px; }
-    .prev-arrow { left: 5px; }
-    .next-arrow { right: 5px; }
-    .lightbox-content { width: 95%; margin-top: 40px; }
+    transform: scale(1.15);
 }
 
-/* --- Diferenciais (Por Que Nos Escolher) --- */
+/* =========================================
+   Sobre Mim
+   ========================================= */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.sobre-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-gold);
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   Diferenciais
+   ========================================= */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas no PC */
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -320,14 +220,14 @@ h1, h2, h3, .logo {
 }
 
 .feature-card:hover {
-    background-color: var(--light-beige); /* Fundo bege suave ao passar o mouse */
+    background-color: var(--light-beige);
 }
 
 .feature-icon {
     width: 64px;
     height: 64px;
     margin: 0 auto 20px auto;
-    background: linear-gradient(135deg, var(--accent-brown), var(--accent-gold)); /* Degradê nos ícones */
+    background: linear-gradient(135deg, var(--accent-brown), var(--accent-gold));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -337,7 +237,7 @@ h1, h2, h3, .logo {
 }
 
 .feature-card:hover .feature-icon {
-    transform: scale(1.1); /* Ícone cresce ao passar o mouse */
+    transform: scale(1.1);
 }
 
 .feature-card h3 {
@@ -348,22 +248,369 @@ h1, h2, h3, .logo {
 
 .feature-card p {
     font-size: 0.95rem;
-    color: #6b5d54; /* Tom de marrom mais acinzentado para o texto */
+    color: #6b5d54;
     line-height: 1.5;
 }
 
-/* Responsividade dos Diferenciais */
-@media (max-width: 992px) {
-    .features-grid { grid-template-columns: repeat(2, 1fr); } /* 2 colunas em Tablets */
+/* =========================================
+   Procedimentos e Categorias
+   ========================================= */
+#servicos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--accent-gold);
 }
 
-@media (max-width: 600px) {
-    .features-grid { grid-template-columns: 1fr; } /* 1 coluna no Celular */
+.category-block {
+    margin-bottom: 50px;
+    text-align: center;
 }
 
-/* --- Footer Completo e Elegante --- */
+.category-title {
+    font-size: 1.8rem;
+    color: var(--accent-brown);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-gold);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--accent-brown);
+    font-size: 1.4rem;
+}
+
+.cards-grid-capilar {
+    display: flex;
+    justify-content: center;
+}
+
+.cards-grid-capilar .card {
+    max-width: 450px;
+    width: 100%;
+}
+
+.services-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-cta {
+    padding: 16px 36px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(184, 134, 69, 0.3);
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(184, 134, 69, 0.4);
+}
+
+/* =========================================
+   Galeria e Filtros
+   ========================================= */
+#galeria h2 {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    color: var(--text-main);
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-family: var(--font-text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--accent-gold);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(184, 134, 69, 0.25);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.gallery-thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: default; /* Remove o cursor de clique */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-thumb:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-thumb .thumb-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(44, 36, 27, 0.9));
+    color: white;
+    text-align: center;
+}
+
+.gallery-disclaimer {
+    margin-top: 45px;
+    text-align: center;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-top: 1px solid rgba(139, 101, 67, 0.15);
+}
+
+.gallery-disclaimer p {
+    font-size: 0.9rem;
+    color: #7a6e65;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.gallery-disclaimer p strong {
+    color: var(--accent-brown);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   Lightbox Modal (Ampliação da Foto Limpa)
+   ========================================= */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 15, 15, 0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-content {
+    background: transparent;
+    border-radius: 0;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: modalPop 0.3s ease-out;
+}
+
+@keyframes modalPop {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-image-container {
+    width: 100%;
+    height: 85vh;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 10000;
+}
+
+.close-lightbox:hover {
+    color: var(--accent-gold);
+}
+
+.nav-arrow {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    padding: 20px;
+    transition: color 0.3s;
+    z-index: 10000;
+}
+
+.nav-arrow:hover {
+    color: var(--accent-gold);
+}
+
+.prev-arrow { left: 20px; }
+.next-arrow { right: 20px; }
+
+/* =========================================
+   Contato
+   ========================================= */
+.contato-header {
+    background: radial-gradient(circle at center, #F6F3EE 0%, var(--bg-color) 100%);
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+.contato-pre-title {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-brown);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.contato-header h2 {
+    font-size: 3rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+.contato-header p {
+    color: #6b5d54;
+    font-size: 1.05rem;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.contact-info-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.03);
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.info-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #B89369;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.contact-info-card h3 {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.contact-info-card p {
+    font-family: var(--font-text);
+    font-size: 0.9rem;
+    color: #6b5d54;
+    line-height: 1.5;
+}
+
+/* =========================================
+   Rodapé (Footer)
+   ========================================= */
 footer {
-    background-color: var(--text-main); /* Marrom escuro */
+    background-color: var(--text-main);
     color: #fff;
     padding: 80px 20px 30px 20px;
 }
@@ -394,21 +641,6 @@ footer {
     line-height: 1.6;
 }
 
-/* Links Rápidos */
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-.footer-links li { margin-bottom: 12px; }
-.footer-links a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-.footer-links a:hover { color: var(--accent-gold); }
-
-/* Contato */
 .footer-contact a {
     display: flex;
     align-items: center;
@@ -418,16 +650,32 @@ footer {
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
-.footer-contact a:hover { color: var(--accent-gold); }
 
-/* Redes Sociais */
+.footer-contact a:hover {
+    color: var(--accent-gold);
+}
+
 .footer-social {
     display: flex;
     gap: 20px;
     margin-top: 25px;
 }
 
-/* Faixa Final (Copyright) */
+.footer-image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .footer-bottom {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -436,211 +684,115 @@ footer {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Responsividade do Footer */
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
+/* =========================================
+   Animações de Scroll
+   ========================================= */
+.fade-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   Responsividade (Tablets e Celulares)
+   ========================================= */
+@media (min-width: 769px) {
+    .coluna-contato {
+        padding-left: 80px;
     }
-    .footer-contact a { justify-content: center; }
-    .footer-social { justify-content: center; }
 }
 
-/* --- Estilo da Nova Seção de Contato --- */
-.contato-header {
-    /* Cria aquele fundo suave e elegante da imagem */
-    background: radial-gradient(circle at center, #F6F3EE 0%, var(--bg-color) 100%);
-    text-align: center;
-    padding: 80px 20px 60px;
-}
-
-.contato-pre-title {
-    display: block;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent-brown);
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.contato-header h2 {
-    font-size: 3rem;
-    color: var(--text-main);
-    margin-bottom: 15px;
-}
-
-.contato-header p {
-    color: #6b5d54;
-    font-size: 1.05rem;
-}
-
-.contact-info-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas no PC */
-    gap: 20px;
-}
-
-.contact-info-card {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.03);
-    border-radius: 12px;
-    padding: 30px 25px;
-    text-align: left;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Sombra bem levinha */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-info-card:hover {
-    transform: translateY(-5px); /* Dá um pulinho suave ao passar o mouse */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-.info-icon {
-    width: 45px;
-    height: 45px;
-    background-color: #B89369; /* Tom dourado escuro igual da imagem */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-bottom: 25px;
-}
-
-.contact-info-card h3 {
-    font-family: var(--font-title);
-    font-size: 1.4rem;
-    color: var(--text-main);
-    margin-bottom: 8px;
-}
-
-.contact-info-card p {
-    font-family: var(--font-text);
-    font-size: 0.9rem;
-    color: #6b5d54;
-    line-height: 1.5;
-}
-
-/* Responsividade da nova seção */
 @media (max-width: 992px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-info-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 600px) {
-    .contact-info-grid { grid-template-columns: 1fr; }
-    .contato-header h2 { font-size: 2.2rem; }
-}
-
-/* =========================================
-   RESPONSIVIDADE (Telas de Celular e Tablet)
-   ========================================= */
-/* =========================================
-   Ajuste dos Botões e Instagram no Início
-   ========================================= */
-.hero-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.hero-social-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-}
-
-.hero-social-link,
-.hero-social-link:visited {
-    color: var(--accent-gold);
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.hero-social-link:hover {
-    color: var(--text-main);
-    transform: scale(1.15);
-}
-@media (min-width: 769px) {
-    .coluna-contato {
-        padding-left: 100px; /* Ajuste este número para empurrar mais ou menos */
-    }
-}
 @media (max-width: 768px) {
-    
-    /* 1. Ajuste dos Títulos e Textos Principais */
-    h1 {
-        font-size: 2.5rem; /* Diminui o título grandão da página inicial */
+    .navbar {
+        padding: 20px;
     }
-    
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
     .hero h2 {
         font-size: 1.2rem;
     }
-    
+
     .hero-content p {
         font-size: 1rem;
-        padding: 0 15px; /* Adiciona uma margem para o texto não colar na borda */
+        padding: 0 15px;
     }
 
-    /* 2. Empilhar Colunas (Sobre, Diferenciais, Serviços, Contato) */
+    .hero-actions .btn {
+        width: 80%;
+        text-align: center;
+    }
+
     .sobre-grid,
     .features-grid,
     .cards-grid,
     .contact-info-grid,
     .footer-grid {
-        grid-template-columns: 1fr; /* Essa é a mágica! Transforma tudo em 1 única coluna */
-        gap: 30px; /* Adiciona um espaço de respiro entre um item e outro quando empilhados */
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
- 
-
-.hero-social-link:hover {
-    color: var(--text-main); 
-    transform: scale(1.15); 
-}
-    /* 3. Ajuste de Botões na Tela Inicial */
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
-    
-    .btn {
-        width: 80%; /* Faz os botões ocuparem quase a largura toda da tela, mais fáceis de tocar */
+
+    .contato-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .footer-grid {
         text-align: center;
     }
 
-    /* 4. Ajuste da Galeria */
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Coloca uma foto por linha na galeria do celular */
+    .footer-contact a,
+    .footer-social {
+        justify-content: center;
     }
 
+    .nav-arrow {
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    .prev-arrow { left: 5px; }
+    .next-arrow { right: 5px; }
+    
     .lightbox-content {
-        width: 95%; /* Garante que a foto ampliada caiba na tela do celular */
+        width: 95%;
+        margin-top: 20px;
     }
-}
-
-/* =========================================
-   Ajuste da Imagem do Rodapé
-   ========================================= */
-.footer-image-col {
-    display: flex;
-    justify-content: center; /* Centraliza a foto na coluna */
-    align-items: center;
-}
-
-.footer-image {
-    max-width: 100%; /* Garante que a imagem não vaze para os lados */
-    height: auto;
-    max-height: 180px; /* Limita a altura para não ficar muito grande (pode ajustar esse número se quiser) */
-    border-radius: 8px; /* Deixa as bordinhas levemente arredondadas */
-    object-fit: cover; /* Garante que a foto não fique espremida ou esticada */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Dá uma sombra bem chique em volta */
 }
